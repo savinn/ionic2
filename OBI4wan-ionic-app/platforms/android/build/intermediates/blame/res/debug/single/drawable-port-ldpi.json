@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/polina/OBI4wan-ionic-app/platforms/android/build/intermediates/res/merged/debug/drawable-port-ldpi/screen.png",
+        "source": "/Users/polina/OBI4wan-ionic-app/platforms/android/res/drawable-port-ldpi/screen.png"
+    },
+    {
+        "merged": "/Users/polina/myApp/platforms/android/build/intermediates/res/merged/debug/drawable-port-ldpi/screen.png",
+        "source": "/Users/polina/myApp/platforms/android/res/drawable-port-ldpi/screen.png"
+    }
+]

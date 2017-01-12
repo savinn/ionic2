@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Old API</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-searchbar placeholder="search" [formControl]="term" (keyup.enter)="startSearch()"></ion-searchbar>
+<ion-item *ngFor='let item of items'>
+  
+  <img src="{{item.AvatarUri}}" class="message_avatar" item-left/>
+      <div class="item-note" item-left>
+        <div><strong>{{item.Account}}</strong></div>
+        {{item.FullContent}}
+      </div>
+</ion-item>
+
+</ion-content>
