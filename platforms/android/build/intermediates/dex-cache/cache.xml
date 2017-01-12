@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/polina/OBI4wan-ionic-app/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="873daaba9b25e7f07376989b900fc46e99a9271c">
+        <dex dex="/Users/polina/OBI4wan-ionic-app/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_a96cee10dc8e0392a39159e998144c39798d01be.jar" />
+    </item>
+
+</items>
