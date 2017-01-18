@@ -1,0 +1,40 @@
+page-user-details {
+
+.header__title{
+line-height: 40px;
+}
+   
+.header__buttons{
+       float: right;
+   } 
+
+ .social-icon{
+    width:25px;
+    vertical-align: bottom;
+}   
+ion-slides{
+    height:50%;
+}
+.user-details__slide{
+    background:black;
+    color:white;
+}
+.user-details__social-info{
+    padding: 0!important;
+}
+.user-details__info{
+    color:white;
+    font-size: 14px;
+    margin-top:15px;
+}
+
+.message_avatar{
+    border-radius: 50%;
+    width:40%;
+    height:40%;
+}
+
+.item-md.item-block .item-inner{
+    border-bottom:none;
+}
+}

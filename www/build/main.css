@@ -22113,10 +22113,14 @@ page-login .logo-row {
   margin-top: 100px;
 }
 
+page-page2 .message__content {
+  padding-left: 0 !important;
+}
+
 page-page2 .message_avatar {
   border-radius: 50%;
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 20%;
 }
 
 page-page2 a {
@@ -22141,7 +22145,7 @@ page-page2 .message__small-block {
   height: 20px;
   width: 20px;
   line-height: 20px;
-  vertical-align: top;
+  vertical-align: bottom;
   text-align: center;
 }
 
@@ -22154,6 +22158,58 @@ page-page2 .message__attachment-image {
   height: auto;
 }
 
-page-page2 button.response__button {
-  margin-top: -15px;
+page-page2 .response__button {
+  top: -15px;
+}
+
+page-page2 .social-icon {
+  width: 25px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+page-page2 .item-note {
+  display: inline-block;
+}
+
+page-user-details .header__title {
+  line-height: 40px;
+}
+
+page-user-details .header__buttons {
+  float: right;
+}
+
+page-user-details .social-icon {
+  width: 25px;
+  vertical-align: bottom;
+}
+
+page-user-details ion-slides {
+  height: 50%;
+}
+
+page-user-details .user-details__slide {
+  background: black;
+  color: white;
+}
+
+page-user-details .user-details__social-info {
+  padding: 0 !important;
+}
+
+page-user-details .user-details__info {
+  color: white;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+page-user-details .message_avatar {
+  border-radius: 50%;
+  width: 40%;
+  height: 40%;
+}
+
+page-user-details .item-md.item-block .item-inner {
+  border-bottom: none;
 }

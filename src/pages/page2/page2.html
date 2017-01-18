@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{pageTitle}}</ion-title>
+    <ion-title>{{stream.Name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,18 +11,18 @@
   <ion-searchbar placeholder="search" [formControl]="searchTerm" (keyup.enter)="getFilteredMessages()"></ion-searchbar>
   <div *ngIf="!isFiltered">
     <ion-card *ngFor='let message of messages'>
-      <ion-item>
-        <button  class="response__button" ion-button clear icon-only item-right>
-        <ion-icon name="redo"></ion-icon>
-           </button>
-        <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
-        <div class="item-note" item-left>
-          <span class="message__sentiment message__small-block u-circle"></span>
-          <strong>{{message.Author}}</strong>
-          <div>{{message.PublishDateTime | date:'short'}}</div>
-        </div>
-      </ion-item>
-      <ion-card-content>
+
+
+      <ion-card-content (click)="goToUserDetailsPage(message)">
+        <ion-item  class="message__content">
+          <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
+          <div class="item-note" item-left>
+            <span class="message__sentiment message__small-block u-circle"></span>
+            <strong>{{message.Author}}</strong>
+            <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
+            <div>{{message.PublishDateTime | date:'short'}}</div>
+          </div>
+        </ion-item>
         <div class="message__attachment" *ngFor="let message of message.Media">
           <img class="message__attachment-image" src="{{message.Link}}" />
         </div>
@@ -33,18 +33,28 @@
           <span *ngFor="let message of message.ClientTags" class="message__tag">{{message}}</span>
         </div>
       </ion-card-content>
+      <ion-list class="account__selection">
+        <ion-item>
+          <button ion-button clear icon-only item-right>
+              <ion-icon name="checkbox"></ion-icon>
+           </button>
+        </ion-item>
+      </ion-list>
     </ion-card>
   </div>
+
   <div *ngIf="isFiltered">
     <ion-card *ngFor='let message of filteredMessages'>
-      <ion-item>
-        <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
-        <div class="item-note" item-left>
-          <strong>{{message.Author}}</strong>
-          <div>{{message.PublishDateTime | date:'short'}}</div>
-        </div>
-      </ion-item>
-      <ion-card-content>
+      <ion-card-content (click)="goToUserDetailsPage(message)">
+        <ion-item class="message__content">
+          <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
+          <div class="item-note" item-left>
+            <span class="message__sentiment message__small-block u-circle"></span>
+            <strong>{{message.Author}}</strong>
+            <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
+            <div>{{message.PublishDateTime | date:'short'}}</div>
+          </div>
+        </ion-item>
         <div class="message__attachment" *ngFor="let message of message.Media">
           <img class="message__attachment-image" src="{{message.Link}}" />
         </div>
@@ -55,6 +65,13 @@
           <span *ngFor="let message of message.ClientTags" class="message__tag">{{message}}</span>
         </div>
       </ion-card-content>
+      <ion-list class="account__selection">
+        <ion-item>
+          <button ion-button clear icon-only item-right>
+              <ion-icon name="checkbox"></ion-icon>
+           </button>
+        </ion-item>
+      </ion-list>
     </ion-card>
   </div>
 </ion-content>

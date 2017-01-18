@@ -1,0 +1,25 @@
+<!--
+  Generated template for the StreamBuckets page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{stream.Name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list *ngFor="let bucket of bucketsData">
+    <ion-item (click)="onBucketSelected($event, bucket.state)">
+    {{bucket.name}}
+      <ion-badge item-right>{{bucket.count}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
