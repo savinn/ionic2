@@ -25,7 +25,7 @@ export class Page2 {
   isFiltered = false;
   platforms = Platforms;
   selectedMessage: any;
-  
+  updates;
   private stream;
 
 
@@ -45,13 +45,17 @@ export class Page2 {
      this.subscribeGroupedMessages();
 
         // TODO: when signalR supplies the signal we can remove the interval
-        setInterval(() => {
+       this.updates = setInterval(() => {
                 this.subscribeUpdateGroupedMessages();
             
         }, 10000);
 
     this.socialAccountsService.getSocialAccounts().subscribe(incomingAccounts => this.accounts = incomingAccounts);
 
+  }
+
+  ionViewWillLeave(){
+     clearInterval(this.updates);
   }
 
   subscribeGroupedMessages() {
@@ -61,6 +65,8 @@ export class Page2 {
         this.getPlatform();
       });
   }
+
+
       // TODO: this should be called when signalR knows there are new messages
     subscribeUpdateGroupedMessages() {
 
