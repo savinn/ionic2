@@ -33,7 +33,6 @@ export class Page2 {
     public navCtrl: NavController,
     public navParams: NavParams,
     private messagesService: WebcareDataService,
-    private socialAccountsService: WebcareDataService,
     private toastCtrl: ToastController) {
     this.stream = navParams.get("stream");
 
@@ -50,7 +49,7 @@ export class Page2 {
             
         }, 10000);
 
-    this.socialAccountsService.getSocialAccounts().subscribe(incomingAccounts => this.accounts = incomingAccounts);
+
 
   }
 
@@ -81,10 +80,10 @@ export class Page2 {
 
                     // TODO: check for all changes and create seperate method
                     if (existingGroupedMessage) {
-                        if (existingGroupedMessage.Content[0] !== newGroupedMessage.Content[0] ||
-                            existingGroupedMessage.MessageAction !== newGroupedMessage.MessageAction) {
-                            existingGroupedMessage.Content = newGroupedMessage.Content;
-                            existingGroupedMessage.MessageAction = newGroupedMessage.MessageAction;
+                        if (existingGroupedMessage.RootMessage.Content[0] !== newGroupedMessage.RootMessage.Content[0] ||
+                            existingGroupedMessage.RootMessage.MessageAction !== newGroupedMessage.RootMessage.MessageAction) {
+                            existingGroupedMessage.RootMessage.Content = newGroupedMessage.RootMessage.Content;
+                            existingGroupedMessage.RootMessage.MessageAction = newGroupedMessage.RootMessage.MessageAction;
                             amountNewMessages += 1;
                         }
                     } else {
@@ -124,7 +123,7 @@ export class Page2 {
   getPlatform(): any {
     for (var i = 0; i < this.messages.length; i++) {
       for (var j = 0; j < this.platforms.length; j++) {
-        if (this.platforms[j].PostType === this.messages[i].PostType) {
+        if (this.platforms[j].PostType === this.messages[i].RootMessage.PostType) {
           this.messages[i] = _.merge(this.messages[i], this.platforms[j]);
         }
       }
@@ -137,7 +136,7 @@ export class Page2 {
     this.isFiltered = true;
 
     return this.filteredMessages = _.filter(this.messages, Message =>
-      Message.Content.join(" ").toLowerCase().indexOf(this.searchTerm.value.toLowerCase()) !== -1
+      Message.RootMessage.Content.join(" ").toLowerCase().indexOf(this.searchTerm.value.toLowerCase()) !== -1
 
     )
   }

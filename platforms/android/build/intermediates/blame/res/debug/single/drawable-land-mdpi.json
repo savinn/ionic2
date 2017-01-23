@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/build/intermediates/res/merged/debug/drawable-land-mdpi/screen.png",
+        "source": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/res/drawable-land-mdpi/screen.png"
+    },
+    {
         "merged": "/Users/polina/myApp/platforms/android/build/intermediates/res/merged/debug/drawable-land-mdpi/screen.png",
         "source": "/Users/polina/myApp/platforms/android/res/drawable-land-mdpi/screen.png"
     },

@@ -6,5 +6,9 @@
     {
         "merged": "/Users/polina/myApp/platforms/android/build/intermediates/res/merged/debug/mipmap-hdpi/icon.png",
         "source": "/Users/polina/myApp/platforms/android/res/mipmap-hdpi/icon.png"
+    },
+    {
+        "merged": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/build/intermediates/res/merged/debug/mipmap-hdpi/icon.png",
+        "source": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/res/mipmap-hdpi/icon.png"
     }
 ]

@@ -15,22 +15,22 @@
 
       <ion-card-content (click)="goToUserDetailsPage(message)">
         <ion-item  class="message__content">
-          <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
+          <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
             <span class="message__sentiment message__small-block u-circle"></span>
-            <strong>{{message.Author}}</strong>
+            <strong>{{message.RootMessage.Author}}</strong>
             <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            <div>{{message.PublishDateTime | date:'short'}}</div>
+            <div>{{message.RootMessage.PublishDateTime | date:'short'}}</div>
           </div>
         </ion-item>
-        <div class="message__attachment" *ngFor="let message of message.Media">
+        <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
           <img class="message__attachment-image" src="{{message.Link}}" />
         </div>
-        <div class="message__content" *ngFor="let message of message.Content">
+        <div class="message__content" *ngFor="let message of message.RootMessage.Content">
           {{message}}
         </div>
         <div class="message__footer">
-          <span *ngFor="let message of message.ClientTags" class="message__tag">{{message}}</span>
+          <span *ngFor="let message of message.RootMessage.ClientTags" class="message__tag">{{message}}</span>
         </div>
       </ion-card-content>
       <ion-list class="account__selection">
@@ -47,22 +47,22 @@
     <ion-card *ngFor='let message of filteredMessages'>
       <ion-card-content (click)="goToUserDetailsPage(message)">
         <ion-item class="message__content">
-          <img src="{{message.AvatarUrl}}" class="message_avatar" item-left/>
+          <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
             <span class="message__sentiment message__small-block u-circle"></span>
-            <strong>{{message.Author}}</strong>
+            <strong>{{message.RootMessage.Author}}</strong>
             <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            <div>{{message.PublishDateTime | date:'short'}}</div>
+            <div>{{message.RootMessage.PublishDateTime | date:'short'}}</div>
           </div>
         </ion-item>
-        <div class="message__attachment" *ngFor="let message of message.Media">
+        <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
           <img class="message__attachment-image" src="{{message.Link}}" />
         </div>
-        <div class="message__content" *ngFor="let message of message.Content">
+        <div class="message__content" *ngFor="let message of message.RootMessage.Content">
           {{message}}
         </div>
         <div class="message__footer">
-          <span *ngFor="let message of message.ClientTags" class="message__tag">{{message}}</span>
+          <span *ngFor="let message of message.RootMessage.ClientTags" class="message__tag">{{message}}</span>
         </div>
       </ion-card-content>
       <ion-list class="account__selection">

@@ -4,6 +4,10 @@
         "source": "/Users/polina/OBI4wan-ionic-app/platforms/android/res/mipmap-mdpi/icon.png"
     },
     {
+        "merged": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/build/intermediates/res/merged/debug/mipmap-mdpi/icon.png",
+        "source": "/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/res/mipmap-mdpi/icon.png"
+    },
+    {
         "merged": "/Users/polina/myApp/platforms/android/build/intermediates/res/merged/debug/mipmap-mdpi/icon.png",
         "source": "/Users/polina/myApp/platforms/android/res/mipmap-mdpi/icon.png"
     }

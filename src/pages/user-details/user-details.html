@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-title>
-      <span class="header__title">{{message.Author}}</span>
+      <span class="header__title">{{message.RootMessage.Author}}</span>
       <span class="header__buttons">
     <button ion-button clear icon-only item-right>
       <ion-icon name="share-alt"></ion-icon>
@@ -32,10 +32,10 @@
 
   <ion-slides pager>
     <ion-slide class="user-details__slide">
-      <img src="{{message.AvatarUrl}}" class="message_avatar" />
+      <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" />
       <div class="user-details__info" item-rigth>
-        <ion-badge color="light">Followers:{{message.CountOfFollowers}}</ion-badge>
-        <ion-badge color="light">Friends:{{message.CountOfFriends}}</ion-badge>
+        <ion-badge color="light">Followers:{{message.RootMessage.CountOfFollowers}}</ion-badge>
+        <ion-badge color="light">Friends:{{message.RootMessage.CountOfFriends}}</ion-badge>
       </div>
     </ion-slide>
     <ion-slide class="user-details__slide">
@@ -43,13 +43,20 @@
     </ion-slide>
   </ion-slides>
   <ion-item class="user-details__social-info">
-    <span item-left><img class="social-icon" src="{{message.img}}" /> {{message.Host}}</span>
-    <span item-right>{{message.PublishDateTime | date:'short'}}</span>
+    <span item-left><img class="social-icon" src="{{message.img}}" /> {{message.RootMessage.Host}}</span>
+    <span item-right>{{message.RootMessage.PublishDateTime | date:'short'}}</span>
   </ion-item>
-    <div class="message__attachment" *ngFor="let message of message.Media">
-      <img class="message__attachment-image" src="{{message.Link}}" />
-    </div>
-    <div class="message__content" *ngFor="let message of message.Content">
-      <div [innerHTML]="message"></div>
-    </div>
+  <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
+    <img class="message__attachment-image" src="{{message.Link}}" />
+  </div>
+  <div class="message__content" *ngFor="let message of message.RootMessage.Content">
+    <div [innerHTML]="message"></div>
+  </div>
+  <ion-item>
+    <ion-label color="primary">Accounts</ion-label>
+    <ion-select  placeholder="Select account">
+      <ion-option *ngFor="let account of filteredAccounts" [value]="account.Name">{{account.Name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>

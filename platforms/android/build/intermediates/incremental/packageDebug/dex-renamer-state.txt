@@ -1,4 +1,4 @@
-#Wed Jan 18 14:31:27 CET 2017
-base.0=/Users/polina/OBI4wan-ionic-app/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Wed Jan 18 16:09:54 CET 2017
+base.0=/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/Users/polina/OBI4wan-ionic-app/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/Users/polina/OBI4wan-Ionic/Ionic/platforms/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
