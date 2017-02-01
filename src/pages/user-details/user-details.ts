@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {NotePage} from "../note/note";
+import {ConversationPage} from "../conversation/conversation";
 import { WebcareDataService } from "../../app/providers/webcare-data";
 
-
-import * as _ from "lodash";
 /*
   Generated class for the UserDetails page.
 
@@ -29,18 +29,30 @@ export class UserDetailsPage {
   ionViewDidLoad() {
     this.urlifyContent();
     this.socialAccountsService.getSocialAccounts().subscribe(incomingAccounts => this.accounts = incomingAccounts);
-    this.getFilteredAccounts();
   }
-  getFilteredAccounts() {
-      this.filteredAccounts= _.filter(this.accounts, account => account.AccountType.toLowerCase()===this.message.PostType)
 
+  getFilteredAccounts(){
+  if (this.accounts){
+    return this.accounts.filter(
+      currentAccount => currentAccount.AccountType.toLowerCase() === this.message.PostType
+    );
   }
+  }
+
   urlifyContent() {
     let urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
     for (let index = 0; index < this.message.RootMessage.Content.length; ++index) {
       this.message.RootMessage.Content[index] = this.message.RootMessage.Content[index].replace(urlRegex, "<a href='$1'>$1</a>");
     }
+  }
+
+  goToConversationPage(){
+    this.navCtrl.push(ConversationPage,{message: this.message});
+  }
+
+    goToMakeANotePage() {
+    this.navCtrl.push(NotePage);
   }
 
 }

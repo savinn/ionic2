@@ -8,9 +8,11 @@ import {StreamBucketsPage} from "../pages/stream-buckets/stream-buckets";
 //import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { UserDetailsPage } from "../pages/user-details/user-details";
+import {NotePage} from "../pages/note/note";
 import { WebcareAuthenticationService} from "./providers/webcare-authenticate";
 import { WebcareDataService} from "./providers/webcare-data";
-import {SummaryPipe} from "./pipes/summary.pipe"
+import {SummaryPipe} from "./pipes/summary.pipe";
+import {ConversationPage} from "../pages/conversation/conversation";
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import {SummaryPipe} from "./pipes/summary.pipe"
     UserDetailsPage,
    // Page1,
     SummaryPipe,
-    Page2
+    Page2,
+    NotePage,
+    ConversationPage
   ],
   imports: [
     IonicModule.forRoot(OBI4wan),
@@ -37,7 +41,9 @@ import {SummaryPipe} from "./pipes/summary.pipe"
     StreamBucketsPage,
     UserDetailsPage,
     //Page1,
-    Page2
+    Page2,
+    NotePage,
+    ConversationPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, WebcareAuthenticationService, WebcareDataService ]
 })

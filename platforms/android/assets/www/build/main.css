@@ -22113,6 +22113,14 @@ page-login .logo-row {
   margin-top: 100px;
 }
 
+page-note .header__title {
+  line-height: 40px;
+}
+
+page-note .header__buttons {
+  float: right;
+}
+
 page-page2 .message__content {
   padding-left: 0 !important;
 }

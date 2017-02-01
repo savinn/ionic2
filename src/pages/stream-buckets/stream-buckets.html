@@ -16,7 +16,7 @@
 <ion-content padding>
 
   <ion-list *ngFor="let bucket of bucketsData">
-    <ion-item (click)="onBucketSelected($event, bucket.state)">
+    <ion-item (click)="onBucketSelected(bucket.state)">
     {{bucket.name}}
       <ion-badge item-right>{{bucket.count}}</ion-badge>
     </ion-item>

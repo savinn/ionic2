@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { WebcareDataService } from "../../app/providers/webcare-data";
-import { UserDetailsPage } from "../user-details/user-details"
+import { UserDetailsPage } from "../user-details/user-details";
 
 
 
@@ -22,6 +22,7 @@ export class Page2 {
   accounts: any[];
   searchTerm = new FormControl();
   filteredMessages: any[];
+  stateMessages: any[];
   isFiltered = false;
   platforms = Platforms;
   selectedMessage: any;
@@ -42,18 +43,15 @@ export class Page2 {
 
   ionViewWillEnter() {
      this.subscribeGroupedMessages();
-
-        // TODO: when signalR supplies the signal we can remove the interval
        this.updates = setInterval(() => {
                 this.subscribeUpdateGroupedMessages();
-            
-        }, 10000);
+             }, 10000);
 
 
 
   }
 
-  ionViewWillLeave(){
+  viewWillUnload(){
      clearInterval(this.updates);
   }
 
@@ -108,7 +106,7 @@ export class Page2 {
     }
   presentToast() {
    let toast = this.toastCtrl.create({
-    message: 'The stream has a new message',
+    message: 'The stream '+this.stream.Name+" has a new message",
     duration: 7000,
     position: 'bottom'
   });
@@ -130,7 +128,6 @@ export class Page2 {
     }
 
   }
-
 
   getFilteredMessages() {
     this.isFiltered = true;

@@ -10,7 +10,7 @@ import { WebcareAuthenticationService } from "./webcare-authenticate";
 export class WebcareDataService {
     apiUrl: string = "http://r2d2alfa.obi4wan.nl";
     private streamDataUrl = this.apiUrl + "/api/webcare/streams"
-  private socialAccountsDataUrl: string = this.apiUrl + "/api/settings/customers/1/socialaccounts/";
+    private socialAccountsDataUrl: string = this.apiUrl + "/api/settings/customers/1/socialaccounts/";
 
 
     constructor(private http: Http, private authenticationService: WebcareAuthenticationService) { }
@@ -28,6 +28,11 @@ export class WebcareDataService {
     }
     getSocialAccounts(): Observable<any>{
         return this.authenticateAndHttpRequest(this.socialAccountsDataUrl, RequestTypes.Get, {})
+    }
+
+    getConversation(segmentId: string, indexMessageId: string){
+        const dataUrl = this.apiUrl+`/api/webcare/${segmentId}/${indexMessageId}/conversation`
+         return this.authenticateAndHttpRequest(dataUrl, RequestTypes.Get, {})
     }
 
     private authenticateAndHttpRequest(url: string, requestType: RequestTypes, parameters: any): Observable<any> {
