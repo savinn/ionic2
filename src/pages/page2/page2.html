@@ -14,13 +14,13 @@
 
 
       <ion-card-content (click)="goToUserDetailsPage(message)">
-        <ion-item  class="message__content">
+        <ion-item class="message__content">
           <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
-            <span class="message__sentiment message__small-block u-circle"></span>
-            <strong>{{message.RootMessage.Author}}</strong>
             <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            <div>{{message.RootMessage.PublishDateTime | date:'short'}}</div>
+            {{message.RootMessage.Author}}
+            <span class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</span>
+            <span class="message__sentiment message__small-block"></span>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
@@ -49,10 +49,10 @@
         <ion-item class="message__content">
           <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
-            <span class="message__sentiment message__small-block u-circle"></span>
-            <strong>{{message.RootMessage.Author}}</strong>
             <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            <div>{{message.RootMessage.PublishDateTime | date:'short'}}</div>
+            {{message.RootMessage.Author}}
+            <span class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</span>
+            <span class="message__sentiment message__small-block"></span>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">

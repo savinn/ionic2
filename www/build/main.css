@@ -22121,6 +22121,10 @@ page-note .header__buttons {
   float: right;
 }
 
+page-page2 .card-content-md {
+  padding: 0 10px 0s 15px;
+}
+
 page-page2 .message__content {
   padding-left: 0 !important;
 }
@@ -22129,6 +22133,10 @@ page-page2 .message_avatar {
   border-radius: 50%;
   width: 20%;
   height: 20%;
+}
+
+page-page2 .message__date {
+  font-weight: 300;
 }
 
 page-page2 a {
@@ -22150,10 +22158,9 @@ page-page2 .message__tag {
 page-page2 .message__small-block {
   background: red;
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  line-height: 20px;
-  vertical-align: bottom;
+  height: 5px;
+  width: 100px;
+  vertical-align: middle;
   text-align: center;
 }
 
