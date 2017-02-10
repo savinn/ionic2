@@ -20,6 +20,7 @@ export class OBI4wan {
 
   constructor(public platform: Platform) {
     this.initializeApp();
+    this.checkPreviousAuthorization();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -29,6 +30,15 @@ export class OBI4wan {
     ];
 
   }
+  checkPreviousAuthorization(): void { 
+  if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) && 
+     (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)&& 
+     (window.localStorage.getItem('envoriment') === "undefined" || window.localStorage.getItem('envoriment') === null)) {
+    this.rootPage = LoginPage;
+  } else {
+    this.rootPage = StreamsPage;
+  }
+}
 
   initializeApp() {
     this.platform.ready().then(() => {

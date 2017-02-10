@@ -15,12 +15,17 @@
 
       <ion-card-content (click)="goToUserDetailsPage(message)">
         <ion-item class="message__content">
-          <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
-          <div class="item-note" item-left>
-            <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            {{message.RootMessage.Author}}
-            <span class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</span>
-            <span class="message__sentiment message__small-block"></span>
+          <div item-left>
+            <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" />
+            <ion-badge>{{message.Count}}</ion-badge>
+          </div>
+          <div class="item-note">
+            <div>
+              <span item-rigth><img class="social-icon" src="{{message.img}}"/></span> {{message.RootMessage.Author}}
+              <div class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</div>
+            </div>
+
+            <div class="message__sentiment message__small-block"></div>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
@@ -49,10 +54,11 @@
         <ion-item class="message__content">
           <img src="{{message.RootMessage.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
-            <span item-rigth><img class="social-icon" src="{{message.img}}"/></span>
-            {{message.RootMessage.Author}}
-            <span class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</span>
-            <span class="message__sentiment message__small-block"></span>
+            <div>
+              <span item-rigth><img class="social-icon" src="{{message.img}}"/></span> {{message.RootMessage.Author}}
+            </div>
+            <div class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</div>
+            <div class="message__sentiment message__small-block"></div>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">

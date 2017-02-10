@@ -22122,7 +22122,7 @@ page-note .header__buttons {
 }
 
 page-page2 .card-content-md {
-  padding: 0 10px 0s 15px;
+  padding: 0 10px 0 15px;
 }
 
 page-page2 .message__content {
@@ -22131,12 +22131,13 @@ page-page2 .message__content {
 
 page-page2 .message_avatar {
   border-radius: 50%;
-  width: 20%;
-  height: 20%;
+  width: 15%;
+  height: 15%;
 }
 
 page-page2 .message__date {
   font-weight: 300;
+  font-size: 75%;
 }
 
 page-page2 a {

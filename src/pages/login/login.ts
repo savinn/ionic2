@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {WebcareAuthenticationService} from "../../app/providers/webcare-authenticate";
-import {StreamsPage} from "../streams/streams";
+import { WebcareAuthenticationService } from "../../app/providers/webcare-authenticate";
+import { StreamsPage } from "../streams/streams";
 
 /*
   Generated class for the Login page.
@@ -10,21 +10,20 @@ import {StreamsPage} from "../streams/streams";
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+    selector: 'page-login',
+    templateUrl: 'login.html'
 })
 export class LoginPage {
-    private username:string = "";
+    private username: string = "";
     private password: string = "";
     private environment: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authenticationService: WebcareAuthenticationService,) {}
+    constructor(public navCtrl: NavController, public navParams: NavParams, private authenticationService: WebcareAuthenticationService, ) { }
 
-login() {
-       // this.authenticationService.logout();
+    login() {
 
         if (!this.username || !this.password || !this.environment) {
-           // this.toastService.warn("Please enter username, password and environment");
+            // this.toastService.warn("Please enter username, password and environment");
             return;
         }
 
@@ -34,9 +33,19 @@ login() {
                 this.navCtrl.setRoot(StreamsPage);
             },
             error => {
-               // this.toastService.error("Not a valid username/password/environment");
+                // this.toastService.error("Not a valid username/password/environment");
             }
         );
+
+        if (this.username && this.password && this.environment) {
+            window.localStorage.setItem('username', this.username);
+            window.localStorage.setItem('password', this.password);
+            window.localStorage.setItem('environment', this.environment);
+
+            this.navCtrl.push(StreamsPage);
+        }
+
     }
+    
 
 }
