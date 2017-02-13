@@ -14,13 +14,14 @@
 
 
 <ion-content padding>
+  {{conversationMessages|json}}
 
-      <ion-card *ngFor='let conversation of conversationMessages'>
+      <ion-card>
 
 
       <ion-card-content>
         <ion-item  class="message__content">
-          <img src="{{conversation.Message.AvatarUrl}}" class="message_avatar" item-left/>
+          <img src="{{conversationMessages.Message.AvatarUrl}}" class="message_avatar" item-left/>
           <div class="item-note" item-left>
             <span class="message__sentiment message__small-block u-circle"></span>
             <strong>{{conversation.Message.Author}}</strong>

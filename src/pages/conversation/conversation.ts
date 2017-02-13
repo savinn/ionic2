@@ -14,14 +14,15 @@ import { WebcareDataService } from "../../app/providers/webcare-data";
 })
 export class ConversationPage {
   message;
-  conversationMessages: any[];
+  conversationMessages;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private conversationService: WebcareDataService) {
     this.message = navParams.get("message");
   }
 
-  ionViewDidLoad() {
+ ionViewDidLoad() {
     this.conversationService.getConversation(this.message.RootMessage.Segment, this.message.RootMessage.Id).subscribe(incomingConversationMessages => this.conversationMessages = incomingConversationMessages);
+   
   }
 
 }

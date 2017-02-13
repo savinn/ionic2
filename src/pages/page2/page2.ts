@@ -20,7 +20,6 @@ const Platforms = [
 })
 export class Page2 {
   messages: any[];
-  accounts: any[];
   searchTerm = new FormControl();
   filteredMessages: any[];
   stateMessages: any[];
