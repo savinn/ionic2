@@ -22138,6 +22138,7 @@ page-page2 .message_avatar {
 page-page2 .message__date {
   font-weight: 300;
   font-size: 75%;
+  margin-left: 30px;
 }
 
 page-page2 a {
@@ -22156,11 +22157,21 @@ page-page2 .message__tag {
   padding: 0 .6em;
 }
 
+page-page2 .message__sentiment--1 {
+  background-color: #999;
+}
+
+page-page2 .message__sentiment--2 {
+  background-color: #00ee00;
+}
+
+page-page2 .message__sentiment--3 {
+  background-color: #ee6666;
+}
+
 page-page2 .message__small-block {
-  background: red;
   display: inline-block;
   height: 5px;
-  width: 100px;
   vertical-align: middle;
   text-align: center;
 }
@@ -22186,6 +22197,10 @@ page-page2 .social-icon {
 
 page-page2 .item-note {
   display: inline-block;
+}
+
+page-page2 .action-btn {
+  width: 25%;
 }
 
 page-user-details .header__title {

@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { WebcareDataService } from "../../app/providers/webcare-data";
 import { UserDetailsPage } from "../user-details/user-details";
+import { ConversationPage } from "../conversation/conversation";
 
 
 
@@ -140,7 +141,7 @@ export class Page2 {
 
   goToUserDetailsPage(message) {
     this.selectedMessage = message;
-    this.navCtrl.push(UserDetailsPage, { message: this.selectedMessage });
+    this.navCtrl.push(ConversationPage, { message: this.selectedMessage });
   }
 }
 

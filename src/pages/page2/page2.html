@@ -25,7 +25,7 @@
               <div class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</div>
             </div>
 
-            <div class="message__sentiment message__small-block"></div>
+            <div class="message__sentiment--{{message.RootMessage.Sentiment}} message__small-block" [style.width.%]="message.RootMessage.CountOfFollowers/10"></div>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
@@ -39,9 +39,18 @@
         </div>
       </ion-card-content>
       <ion-list class="account__selection">
-        <ion-item>
-          <button ion-button clear icon-only item-right>
-              <ion-icon name="checkbox"></ion-icon>
+        <ion-item no-padding padding-right>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="checkmark-circle"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="bookmarks"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="bug"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="person-add"></ion-icon>
            </button>
         </ion-item>
       </ion-list>
@@ -58,7 +67,7 @@
               <span item-rigth><img class="social-icon" src="{{message.img}}"/></span> {{message.RootMessage.Author}}
             </div>
             <div class="message__date">{{message.RootMessage.PublishDateTime | date:'short'}}</div>
-            <div class="message__sentiment message__small-block"></div>
+            <div class="message__sentiment--{{message.RootMessage.Sentiment}} message__small-block" [style.width.%]="message.RootMessage.CountOfFollowers/10"></div>
           </div>
         </ion-item>
         <div class="message__attachment" *ngFor="let message of message.RootMessage.Media">
@@ -71,10 +80,19 @@
           <span *ngFor="let message of message.RootMessage.ClientTags" class="message__tag">{{message}}</span>
         </div>
       </ion-card-content>
-      <ion-list class="account__selection">
-        <ion-item>
-          <button ion-button clear icon-only item-right>
-              <ion-icon name="checkbox"></ion-icon>
+ <ion-list class="account__selection">
+        <ion-item no-padding padding-right>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="checkmark-circle"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="bookmarks"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="bug"></ion-icon>
+           </button>
+          <button ion-button clear icon-only class="action-btn">
+              <ion-icon name="person-add"></ion-icon>
            </button>
         </ion-item>
       </ion-list>

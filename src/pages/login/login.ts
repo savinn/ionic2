@@ -18,7 +18,9 @@ export class LoginPage {
     private password: string = "";
     private environment: string = "";
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private authenticationService: WebcareAuthenticationService, ) { }
+    constructor(public navCtrl: NavController, public navParams: NavParams, private authenticationService: WebcareAuthenticationService) {
+       
+     }
 
     login() {
 
