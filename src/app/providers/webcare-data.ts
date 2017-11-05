@@ -8,7 +8,7 @@ import { WebcareAuthenticationService } from "./webcare-authenticate";
 
 @Injectable()
 export class WebcareDataService {
-    apiUrl: string = "http://r2d2alfa.obi4wan.nl";
+    apiUrl: string = "";//api endpoint removed
     private streamDataUrl = this.apiUrl + "/api/webcare/streams"
     private socialAccountsDataUrl: string = this.apiUrl + "/api/settings/customers/1/socialaccounts/";
 

@@ -4,7 +4,7 @@ import { Observable, Observer } from "rxjs/Rx";
 
 @Injectable()
 export class WebcareAuthenticationService {
-    private authenticationUrl: string = "http://r2d2alfa.obi4wan.nl/token";
+    private authenticationUrl: string = "";//api endpoint removed
     private localStorageName: string = "webcareAuthenticationData";
 
     isAuthenticated: boolean = false;
